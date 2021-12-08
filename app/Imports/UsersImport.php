@@ -5,10 +5,11 @@ namespace App\Imports;
 use App\Models\User;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithUpserts;
 
-class UsersImport implements ToModel, WithHeadingRow, WithBatchInserts, WithUpserts
+class UsersImport implements ToModel, WithHeadingRow, WithBatchInserts, WithUpserts, WithChunkReading
 {
     public function uniqueBy()
     {
@@ -31,7 +32,7 @@ class UsersImport implements ToModel, WithHeadingRow, WithBatchInserts, WithUpse
 
     public function batchSize(): int
     {
-        return 1000;
+        return 10;
     }
 
     public function headingRow(): int
@@ -41,7 +42,7 @@ class UsersImport implements ToModel, WithHeadingRow, WithBatchInserts, WithUpse
 
     public function chunkSize(): int
     {
-        return 1000;
+        return 10;
     }
 
     public function upsert(bool $keyByField = false): bool

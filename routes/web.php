@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MappingController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users', [UsersController::class, 'index'])->name('user.index');
-Route::post('users-import', [UsersController::class, 'import'])->name('user.import');
+// Route::get('users', [UsersController::class, 'index'])->name('user.index');
+// Route::resource('users', UsersController::class)->names('users');
+// Route::post('users-import', [UsersController::class, 'import'])->name('user.import');
+
+Route::get('mapping', [MappingController::class, 'index'])->name('mapping.index');
+Route::post('mapping-import', [MappingController::class, 'import'])->name('mapping.import');
