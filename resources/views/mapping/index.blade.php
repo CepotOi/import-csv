@@ -10,12 +10,19 @@
           <th>Time</th>
           <th>Key</th>
           <th>Tgl Input</th>
-          <th>SDP L6</th>
-          <th>LP L6</th>
-          <th>SDP L7</th>
-          <th>LP L7</th>
-          <th>SDP L8</th>
-          <th>LP L8</th>
+          <th>kwh1</th>
+          <th>kwh2</th>
+          <th>kwh3</th>
+          <th>kwh4</th>
+          <th>kwh5</th>
+          <th>kwh6</th>
+          <th>kwh7</th>
+          <th>kwh8</th>
+          <th>kwh9</th>
+          <th>kwh10</th>
+          <th>kwh11</th>
+          <th>kwh12</th>
+          <th>kwh13</th>
         </tr>
       </thead>
       <tbody>
@@ -26,16 +33,23 @@
           <td>{{ $mapping->time }}</td>
           <td>{{ $mapping->key }}</td>
           <td>{{ $mapping->tgl_input }}</td>
-          <td>{{ $mapping->sdp_l6 ?? '-' }}</td>
-          <td>{{ $mapping->lp_l6 ?? '-' }}</td>
-          <td>{{ $mapping->sdp_l7 ?? '-' }}</td>
-          <td>{{ $mapping->lp_l7 ?? '-' }}</td>
-          <td>{{ $mapping->sdp_l8 ?? '-' }}</td>
-          <td>{{ $mapping->lp_l8 ?? '-' }}</td>
+          <td>{{ $mapping->kwh1 ?? '-' }}</td>
+          <td>{{ $mapping->kwh2 ?? '-' }}</td>
+          <td>{{ $mapping->kwh3 ?? '-' }}</td>
+          <td>{{ $mapping->kwh4 ?? '-' }}</td>
+          <td>{{ $mapping->kwh5 ?? '-' }}</td>
+          <td>{{ $mapping->kwh6 ?? '-' }}</td>
+          <td>{{ $mapping->kwh7 ?? '-' }}</td>
+          <td>{{ $mapping->kwh8 ?? '-' }}</td>
+          <td>{{ $mapping->kwh9 ?? '-' }}</td>
+          <td>{{ $mapping->kwh10 ?? '-' }}</td>
+          <td>{{ $mapping->kwh11 ?? '-' }}</td>
+          <td>{{ $mapping->kwh12 ?? '-' }}</td>
+          <td>{{ $mapping->kwh13 ?? '-' }}</td>
         </tr>
         @empty
         <tr>
-          <td colspan="10">No data found</td>
+          <td colspan="18">No data found</td>
         </tr>
         @endforelse
       </tbody>
